@@ -43,6 +43,8 @@ class Sims {
     sendSms = this.doForAll('sendSms')
     setDataLimit = this.doForAll('setDataLimit')
     esimProfile = this.doForAll('esimProfile')
+    activate = this.doForAll('activate')
+    deactivate = this.doForAll('deactivate')
 
     get length() {
         return this.entities.length

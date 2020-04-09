@@ -665,6 +665,50 @@ async function esimProfile({
   return this;
 }
 
+async function activate() {
+  const {
+    connector
+  } = this;
+  const urlParams = {};
+  const {
+    iccid,
+    eid
+  } = this;
+  assignIf(urlParams, {
+    iccid,
+    eid
+  });
+  const response = await connector._request({
+    path: '/activate',
+    method: 'PUT',
+    urlParams
+  });
+  this.update(response);
+  return this;
+}
+
+async function deactivate() {
+  const {
+    connector
+  } = this;
+  const urlParams = {};
+  const {
+    iccid,
+    eid
+  } = this;
+  assignIf(urlParams, {
+    iccid,
+    eid
+  });
+  const response = await connector._request({
+    path: '/deactivate',
+    method: 'PUT',
+    urlParams
+  });
+  this.update(response);
+  return this;
+}
+
 class Sim {
   constructor({
     connector,
@@ -699,6 +743,10 @@ class Sim {
     _defineProperty(this, "setDataLimit", setGroup$1);
 
     _defineProperty(this, "esimProfile", esimProfile);
+
+    _defineProperty(this, "activate", activate);
+
+    _defineProperty(this, "deactivate", deactivate);
 
     this.loaded = false;
 
@@ -805,6 +853,10 @@ class Sims {
     _defineProperty(this, "setDataLimit", this.doForAll('setDataLimit'));
 
     _defineProperty(this, "esimProfile", this.doForAll('esimProfile'));
+
+    _defineProperty(this, "activate", this.doForAll('activate'));
+
+    _defineProperty(this, "deactivate", this.doForAll('deactivate'));
 
     if (sims) {
       this.entities = sims;

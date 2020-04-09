@@ -12,6 +12,8 @@ import reset from './reset'
 import sendSms from './sendSms'
 import setDataLimit from './setDataLimit'
 import esimProfile from './esimProfile'
+import activate from './activate'
+import deactivate from './deactivate'
 import { assignIf } from '../utils'
 
 class Sim {
@@ -67,6 +69,8 @@ class Sim {
     sendSms = sendSms
     setDataLimit = setDataLimit
     esimProfile = esimProfile
+    activate = activate
+    deactivate = deactivate
 }
 
 export default Sim

@@ -42,10 +42,10 @@ const password = '...'
         if (primary === primaryStatuses.ON) {
             if (secondary === secondaryStatuses.LIVE) {
                 // put sim to sleep mode
-                await sim.suspend()
+                await sim.deactivate()
             } else {
                 // resume sim from sleep mode
-                await sim.resume()
+                await sim.activate()
             }
         }
     }
@@ -178,6 +178,12 @@ await sim.suspend()
 
 // PUT /test
 await sim.test()
+
+// PUT /activate
+await sim.activate()
+
+// PUT /deactivate
+await sim.deactivate()
 ```
 
 For Sims object (`connector.getAllSims()`) all actions are available (will be apply for every sim inside)
