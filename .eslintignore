@@ -1,0 +1,16 @@
+dist
+node_modules
+log
+backup_sql
+coverage
+
+.*
+
+yarn.lock
+yarn-error.log
+Dockerfile
+
+*.http
+*.zip
+*.sql
+*.json
