@@ -9,7 +9,6 @@
 *.sln
 
 node_modules
-dist
 coverage
 
 log
