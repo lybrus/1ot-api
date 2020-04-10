@@ -1,5 +1,7 @@
 # 1ot nodejs connector
 
+Connector for [https://1ot.com](https://1ot.com) api
+
 ## Installation
 
 ### yarn
