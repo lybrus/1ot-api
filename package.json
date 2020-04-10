@@ -1,6 +1,6 @@
 {
     "name": "1ot-api",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "1ot nodejs connector",
     "module": "dist/bundle.esm.js.js",
     "main": "dist/bundle.cjs.js",
@@ -25,7 +25,8 @@
         "test:staged": "dotenv -e .env.test jest --findRelatedTests",
         "lint": "eslint '**/*.{js,ts,tsx}'",
         "lint:fix": "yarn lint -- --fix",
-        "prettier": "prettier '**/*' --write"
+        "prettier": "prettier '**/*' --write",
+        "prepublishOnly": "yarn build"
     },
     "dependencies": {
         "bent": "^7.1.2"
