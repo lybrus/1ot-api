@@ -1,6 +1,6 @@
 {
     "name": "1ot-api",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "1ot nodejs connector",
     "module": "dist/bundle.esm.js.js",
     "main": "dist/bundle.cjs.js",
@@ -68,8 +68,7 @@
     },
     "lint-staged": {
         "src/**/*.{js,ts,tsx}": [
-            "npm run lint:fix",
-            "npm run test:staged"
+            "npm run lint:fix"
         ]
     }
 }

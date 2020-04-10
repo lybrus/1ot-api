@@ -100,6 +100,8 @@ const sim: Sim = await connector.getSim(params: { iccid?: string, eid?: string})
 * Usefull for actions on known sims
 */
 const sim: Sim = new Sim({iccid?: string, eid?: string})
+// It's not necessary
+await sim.load()
 
 /*
 if iccid or eid are defined     -   GET /get_sims
@@ -186,4 +188,8 @@ await sim.activate()
 await sim.deactivate()
 ```
 
-For Sims object (`connector.getAllSims()`) all actions are available (will be apply for every sim inside)
+For Sims object (`connector.getAllSims()`) all actions are available (will be apply for every sim inside). For example:
+```typescript
+const sims = await connector.getAllSims({ groupName: 'Temperature sensors'})
+await sims.suspend()
+```
